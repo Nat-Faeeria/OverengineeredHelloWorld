@@ -28,7 +28,10 @@ pipeline {
     stage('Run') {
       steps {
         unstash 'binary'
-        sh 'java -jar overengineeredhelloworld-1.0-SNAPSHOT.jar'
+        sh '''
+
+
+ls && java -jar target/overengineeredhelloworld-1.0-SNAPSHOT.jar'''
         archiveArtifacts(artifacts: 'target/*.jar', onlyIfSuccessful: true)
       }
     }
