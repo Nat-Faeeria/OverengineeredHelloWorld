@@ -21,6 +21,7 @@ pipeline {
       }
       steps {
         sh 'mvn test'
+        junit(testResults: 'surefire-report/*.xml', allowEmptyResults: true)
       }
     }
     stage('Package') {
@@ -33,6 +34,12 @@ pipeline {
       steps {
         sh 'mvn package'
         archiveArtifacts(artifacts: 'target/*.jar', onlyIfSuccessful: true)
+        stash 'target/*.jar'
+      }
+    }
+    stage('Run') {
+      steps {
+        unstash 'target/*.jar'
       }
     }
   }
