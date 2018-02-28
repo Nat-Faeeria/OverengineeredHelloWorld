@@ -12,10 +12,8 @@ public class Demo {
         return "World";
     }
 
-    public String addExclamation(String text) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(text).append(" !");
-        return sb.toString();
+    public String giveExclamation() {
+        return "!";
     }
 
     public String addSpace(String text1, String text2) {
@@ -25,7 +23,7 @@ public class Demo {
     }
 
     public String sayHelloWorld() {
-        return (this.addExclamation(this.addSpace(this.giveHello(),this.giveWorld())));
+        return (this.addSpace(this.addSpace(this.giveHello(),this.giveWorld()), this.giveExclamation()));
     }
 
 }

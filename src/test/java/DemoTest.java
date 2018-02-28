@@ -1,4 +1,5 @@
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -22,11 +23,6 @@ public class DemoTest {
     }
 
     @org.junit.Test
-    public void addExclamation() {
-        assertEquals("Test addExclamation", this.demo.addExclamation("Truc"), "Truc !");
-    }
-
-    @org.junit.Test
     public void addSpace() {
         assertEquals("Test addSpace", this.demo.addSpace("a","b"), "a b");
     }
@@ -36,4 +32,8 @@ public class DemoTest {
         assertEquals("Test sayHelloWorld", this.demo.sayHelloWorld(), "Hello World !");
     }
 
+    @Test
+    public void giveExclamation() {
+        assertEquals("Test giveExclamation", demo.giveExclamation(), "!");
+    }
 }
