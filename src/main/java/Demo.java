@@ -22,7 +22,11 @@ public class Demo {
         return sb.toString();
     }
 
-    public String sayHelloWorld() {
+   public String sayName(){
+      return "name";
+   }
+ 
+   public String sayHelloWorld() {
         return (this.addSpace(this.addSpace(this.giveHello(),this.giveWorld()), this.giveExclamation()));
     }
 
