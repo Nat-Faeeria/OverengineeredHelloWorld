@@ -26,6 +26,12 @@ pipeline {
       }
     }
     stage('Run') {
+      agent {
+        docker {
+          image 'java:8-jdk_alpine'
+        }
+        
+      }
       steps {
         unstash 'binary'
         sh 'java -jar target/overengineeredhelloworld-1.0-SNAPSHOT.jar'
